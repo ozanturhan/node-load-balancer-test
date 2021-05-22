@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    sysctls:
+      - net.ipv4.conf.eth0.route_localnet=1
+    cap_add:
+      -  NET_ADMIN
+    volumes:
+      - ./data:/usr/src/app/data
+    ports:
+      - 80:80
+    networks:
+      - benchmark
+networks:
+  benchmark:

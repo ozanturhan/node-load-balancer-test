@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  nginx:
+    build:
+      context: ./config
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    networks:
+      - benchmark
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./data:/usr/src/app/data
+    ports:
+      - 8080:8080
+      - 8081:8081
+      - 8082:8082
+      - 8083:8083
+    networks:
+      - benchmark
+networks:
+  benchmark:

@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./data:/usr/src/app/data
+    ports:
+      - 80:80
+    networks:
+      - benchmark
+networks:
+  benchmark:
