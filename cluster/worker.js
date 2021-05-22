@@ -33,4 +33,4 @@ class Worker {
     }
 }
 
-module.exports = Worker;
+new Worker();

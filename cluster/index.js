@@ -1,7 +1,6 @@
 const os = require('os')
 const fs = require('fs')
 const cluster = require('cluster')
-let Worker = require('./worker')
 
 class Cluster {
     constructor () {
@@ -9,9 +8,6 @@ class Cluster {
             process.title = 'node master'
             setInterval(this.write, 5000)
             this.fork()
-        }
-        else {
-            new Worker()
         }
     }
 
@@ -27,6 +23,9 @@ class Cluster {
         let cpus = os.cpus().length
 
         for (let i = 0; i < cpus; i++) {
+            cluster.setupMaster({
+                exec: __dirname+'/worker.js'
+            });
             cluster.fork({id: i})
         }
     }
