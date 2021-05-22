@@ -1,4 +1,4 @@
-#NODE.JS LOAD BALANCER TEST
+# NODE.JS LOAD BALANCER TEST
 
 ## Native Cluster
 ```
@@ -40,6 +40,3 @@ $ docker-compose up
 ```
 autocannon -c 100 -d 40 -p 10 http://localhost
 ```
-
-
-docker run -it -p 80:80 -p 8080:8080 --cap-add=NET_ADMIN --sysctl net.ipv4.conf.eth0.route_localnet=1 <image>
