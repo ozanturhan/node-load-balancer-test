@@ -13,7 +13,7 @@ function fibonacci(limit) {
     return next;
 }
 
-class Worker {
+class Index {
     constructor () {
         id = Number(process.env.id)
         process.title = 'node worker '+ id
@@ -39,10 +39,10 @@ class Worker {
             reply.code(200)
             reply.send(`worker_${id} result: ${result}`);
         })
-        server.listen(8080 + id, '0.0.0.0', ()=> {
-            console.log('Worker', id, 'listening on port', 8080 + id)
+        server.listen(80, '0.0.0.0', ()=> {
+            console.log('Worker', id, 'listening on port', 80)
         })
     }
 }
 
-new Worker()
+new Index()

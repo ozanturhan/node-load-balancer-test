@@ -14,7 +14,7 @@ $ docker-compose build
 $ docker-compose up
 ```
 
-## Nginx Inside Node Image
+## Nginx Inside Node Image (fibonacci)
 ```
 $ cd nginx-inside
 $ docker-compose build
@@ -31,6 +31,13 @@ $ docker-compose up
 ## Iptables
 ```
 $ cd iptables
+$ docker-compose build
+$ docker-compose up
+```
+
+## Single Node (fibonacci)
+```
+$ cd single-node
 $ docker-compose build
 $ docker-compose up
 ```

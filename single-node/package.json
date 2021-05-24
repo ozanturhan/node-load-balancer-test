@@ -1,0 +1,15 @@
+{
+  "name": "node-load-balancer",
+  "version": "1.0.0",
+  "description": "docker build -t load-balanced-app . docker run -p 8080:8080 -p 8081:8081 -p 8082:8082 -p 8083:8083 -v \"$(pwd)/data:/usr/src/app/data\"  load-balanced-app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^3.15.1"
+  }
+}
